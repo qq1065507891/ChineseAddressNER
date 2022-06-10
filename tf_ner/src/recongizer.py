@@ -90,7 +90,7 @@ class Recongnizer(object):
         callbacks = [
             # EarlyStopping(monitor='val_loss', patience=10, verbose=1, mode='max'),
             ModelCheckpoint(self.config.model_path, monitor='val_loss', verbose=1, save_best_only=True,
-                            mode='max', period=1, save_weights_only=True)
+                            mode='min', period=1, save_weights_only=True)
         ]
 
         self.model.summary()
